@@ -22,8 +22,11 @@ exports.config = {
     // should work too though). These services define specific user and key (or access key)
     // values you need to put in here in order to connect to these services.
     //
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
+    // user: process.env.SAUCE_USERNAME,
+    // key: process.env.SAUCE_ACCESS_KEY,
+    user: 'rweber',
+    key: 'eff81fdd-d890-4cde-a9ec-21fdbc78d556',
+
     //
     // If you are using Sauce Labs WebdriverIO takes care about updating the job information
     // once the test is done. This option is set to `true` per default.
@@ -130,7 +133,11 @@ exports.config = {
     // Test reporter for stdout.
     // The following are supported: dot (default), spec and xunit
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporter: 'dot',
+    reporter: 'xunit',
+
+    reporterOptions: {
+        outputDir: '/'
+    },
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

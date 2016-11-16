@@ -5,6 +5,7 @@ describe('auth form', function() {
         yield browser.setValue('#username', 'foo');
         yield browser.setValue('#password', 'bar');
         yield browser.submitForm('#login');
+        yield browser.waitForExist('#flash');
         yield browser.getText('#flash').then(function(flashMsg) {
             expect(flashMsg).toContain('Your username is invalid!');
         });
@@ -15,6 +16,7 @@ describe('auth form', function() {
         yield browser.setValue('#username', 'tomsmith');
         yield browser.setValue('#password', 'SuperSecretPassword!');
         yield browser.submitForm('#login');
+        yield browser.waitForExist('#flash');
         yield browser.getText('#flash').then(function(flashMsg) {
             expect(flashMsg).toContain('You logged into a secure area!');
         });
